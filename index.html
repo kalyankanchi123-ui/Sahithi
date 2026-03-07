@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>😎 Boss Birthday 😎</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script>
+    history.scrollRestoration = "manual";
+    </script>
+</head>
+
+<body>
+    <div id="countdownScreen">
+<h1 id="countdownNumber">3</h1>
+</div>
+<div id="progressBar"></div>
+
+<!-- Floating Background Particles -->
+<div class="particles" id="particles"></div>
+
+<!-- Fireworks Canvas -->
+<canvas id="fireworks"></canvas>
+
+<!-- 🎵 Background Music -->
+<audio id="bgMusic" loop preload="auto">
+<source src="Birthday Song.mp3" type="audio/mpeg">  
+</audio>
+
+<!-- 🔊 Countdown Sound -->
+<audio id="countdownSound" preload="auto">
+    <source src="Countdown.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 🎮 Level 25 Section -->
+<section class="level-section">
+    <div class="level-box">
+        <h2 class="level-title">👑 Level Unlocked 👑</h2>
+
+        <div class="level-number">25</div>
+
+        <p class="level-text">
+            
+            25 years of grace, strength, and a smile that lights up every room.<br>
+            You've grown into someone truly remarkable and the most beautiful chapters of your life are just beginning. 
+        </p>
+
+        <button class="celebrate-btn" onclick="celebrateWithBalloons()">
+           🎂 Celebrate 🎂
+        </button>
+    </div>
+</section>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1 class="typewriter" id="typewriter">Happiest Birthday Sahithi Annapa Reddy</h1>
+            <p class="subtitle fade-in">"A queen turns 25 today — bow down!"</p>
+            <div class="floating-hearts">
+                <div class="heart">🤗</div>
+                <div class="heart">😎</div>
+                <div class="heart">💙</div>
+                <div class="heart">💞</div>
+                <div class="heart">✨</div>
+                <div class="heart">🫂</div>
+            </div>
+            <button class="cta-button" onclick="scrollToSection('gallery')">
+                🎉 Inka Start Cheddama 🎉
+            </button>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Beautiful Memories</h2>
+            <div class="gallery-grid">
+                <div class="photo-card" data-aos="fade-up" data-delay="100">
+                    <div class="photo-container">
+                        <img src="Image2.jpeg"
+                            alt="Smiling under moonlight">
+                        <div class="photo-overlay">
+                            <div class="photo-caption">🌙🌹“You sitting there with that smile like you don’t even realize how beautiful the moment looks. Honestly, you make every place brighter just by being there. ✨”</div>
+                            <button class="like-btn" onclick="toggleLike(this)">
+                                <span class="heart-icon">🤍</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photo-card" data-aos="fade-up" data-delay="200">
+                    <div class="photo-container">
+                        <img src="Image3.jpeg"
+                            alt="Sweet memory">
+                        <div class="photo-overlay">
+                            <div class="photo-caption">🌟🖤“You always look cool and confident even when you’re just standing there thinking about something. That calm vibe is so you. 😌”</div>
+                            <button class="like-btn" onclick="toggleLike(this)">
+                                <span class="heart-icon">🤍</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photo-card" data-aos="fade-up" data-delay="300">
+                    <div class="photo-container">
+                        <img src="Image9.jpeg"
+                            alt="Happy times">
+                        <div class="photo-overlay">
+                            <div class="photo-caption">🚙☀️“You sitting on that Jeep like the main character of your own story confident, fearless, and always ready for the next adventure. 😎”</div>
+                            <button class="like-btn" onclick="toggleLike(this)">
+                                <span class="heart-icon">🤍</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photo-card" data-aos="fade-up" data-delay="400">
+                    <div class="photo-container">
+                        <img src="Image10.jpeg"
+                            alt="Love moment">
+                        <div class="photo-overlay">
+                            <div class="photo-caption">🌿💚“You enjoying the calm moments like this peaceful, happy, and just being yourself. Those are always the best memories. 😊”</div>
+                            <button class="like-btn" onclick="toggleLike(this)">
+                                <span class="heart-icon">🤍</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photo-card" data-aos="fade-up" data-delay="500">
+                    <div class="photo-container">
+                        <img src="Image7.jpeg"
+                            alt="Beautiful day">
+                        <div class="photo-overlay">
+                            <div class="photo-caption">🌊☁️“You and your love for adventures and pretty views this picture is exactly your vibe. Always smiling and enjoying the moment. 💙”</div>
+                            <button class="like-btn" onclick="toggleLike(this)">
+                                <span class="heart-icon">🤍</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photo-card" data-aos="fade-up" data-delay="600">
+                    <div class="photo-container">
+                        <img src="Image8.jpeg"
+                            alt="Romantic moment">
+                        <div class="photo-overlay">
+                            <div class="photo-caption">🏙️✨“You exploring new places and turning every trip into a memory. Somehow every place looks better when you’re in the picture. 📸💫”</div>
+                            <button class="like-btn" onclick="toggleLike(this)">
+                                <span class="heart-icon">🤍</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slideshow Section -->
+    <section class="slideshow-section">
+    <h2 class="section-title">More Memories 📸</h2>
+
+    <div class="slideshow-container">
+
+        <div class="slide fade">
+            <img src="Image1.jpeg" alt="Birthday memory">
+        </div>
+
+        <div class="slide fade">
+            <img src="Image2.jpeg" alt="Celebration moment">
+        </div>
+
+        <div class="slide fade">
+            <img src="Image3.jpeg" alt="Adventure moment">
+        </div>
+
+        <div class="slide fade">
+            <img src="Image4.jpeg" alt="Family gathering">
+        </div>
+
+        <div class="slide fade">
+            <img src="Sahithi 1.jpeg" alt="Friendship moment">
+        </div>
+
+        <div class="slide fade">
+            <img src="Sahithi 2.jpeg" alt="Fun activity">
+        </div>
+
+        <div class="slide fade">
+            <img src="Image5.jpeg" alt="Special occasion">
+        </div>
+
+        <div class="slide fade">
+            <img src="Sahithi 6.jpeg" alt="Surprise moment">
+        </div>
+
+        <div class="slide fade">
+            <img src="Sahithi 7.jpeg" alt="Happy moment">
+        </div>
+
+        <div class="slide fade">
+            <img src="Sahithi 8.JPG" alt="Exciting moment">
+        </div>
+
+        <div class="slide fade">
+            <img src="Sahithi 12.jpeg" alt="Memorable moment">
+        </div>
+
+    </div>
+    </section>
+
+        <!-- 🎥 Watch Video Button -->
+<section class="video-button-section">
+    <button type="button" class="watch-video-btn" onclick="openVideo()">
+        Watch Special Video 🎬
+    </button>
+</section>
+
+<!-- 🎬 Video Popup -->
+<div id="videoPopup" class="video-popup">
+    <div class="video-popup-content">
+        <span class="close-video" onclick="closeVideo()">✖</span>
+
+        <video id="birthdayVideo" controls playsinline>
+            <source src="Video (1).mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
+
+<!-- Ultimate Cake Celebration -->
+<section class="ultimate-cake-section">
+<h2 class="section-title">🎂Grand cake Cutting🎂</h2>
+
+<div class="cake-wrapper">
+
+    <!-- Candles -->
+    <div class="candles-row">
+        <div class="candle"><div class="flame"></div></div>
+        <div class="candle"><div class="flame"></div></div>
+        <div class="candle"><div class="flame"></div></div>
+        <div class="candle"><div class="flame"></div></div>
+        <div class="candle"><div class="flame"></div></div>
+    </div>
+
+    <div class="cake-stage" id="cakeStage" onclick="ultimateCakeCut()">
+
+        <!-- Top tier -->
+        <div class="cake-tier tier-top">
+            <div class="tier-frosting"></div>
+            <div class="drip d1"></div><div class="drip d2"></div><div class="drip d3"></div>
+            <div class="tier-decoration">🌸 25 🌸</div>
+        </div>
+
+        <!-- Middle tier -->
+        <div class="cake-tier tier-mid">
+            <div class="tier-frosting"></div>
+            <div class="drip d1"></div><div class="drip d2"></div><div class="drip d3"></div><div class="drip d4"></div>
+            <div class="tier-decoration">👑 Happy Birthday 👑</div>
+        </div>
+
+        <!-- Bottom tier -->
+        <div class="cake-tier tier-bot">
+            <div class="tier-frosting"></div>
+            <div class="drip d1"></div><div class="drip d2"></div><div class="drip d3"></div><div class="drip d4"></div><div class="drip d5"></div>
+            <div class="tier-decoration">✨ Sahithi ✨</div>
+        </div>
+
+        <!-- Cake plate -->
+        <div class="cake-plate"></div>
+
+        <!-- Knife -->
+        <div class="knife3d" id="knife3d">🔪</div>
+
+    </div>
+
+    <!-- Cut effect overlay -->
+    <div class="cake-cut-overlay" id="cakeCutOverlay"></div>
+
+</div>
+
+<button class="cut-ultimate-btn" onclick="ultimateCakeCut()">
+    Kathi Anduko Chinna
+</button>
+
+</section>
+
+<audio id="cheerSound">
+<source src="Cheers.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 🥂 Drinks / Toast Section -->
+<section class="drinks-section" id="drinks">
+    <h2 class="section-title"> 🥂 Time to Toast! 🥂</h2>
+    
+    <div class="glasses-container" id="glassesContainer">
+
+        <!-- Left Glass - Kalyan -->
+        <div class="glass-wrapper left-glass" id="leftGlass" onclick="clinkGlasses()">
+            <div class="glass">
+                <div class="drink-liquid"></div>
+                <div class="bubble b1"></div>
+                <div class="bubble b2"></div>
+                <div class="bubble b3"></div>
+                <div class="bubble b4"></div>
+                <div class="glass-stem"></div>
+                <div class="glass-base"></div>
+            </div>
+        </div>
+
+        <!-- Clink Sparkle -->
+        <div class="clink-effect" id="clinkEffect">✨</div>
+
+        <!-- Right Glass - Sahithi -->
+        <div class="glass-wrapper right-glass" id="rightGlass" onclick="clinkGlasses()">
+            <div class="glass">
+                <div class="drink-liquid liquid-pink"></div>
+                <div class="bubble b1"></div>
+                <div class="bubble b2"></div>
+                <div class="bubble b3"></div>
+                <div class="bubble b4"></div>
+                <div class="glass-stem"></div>
+                <div class="glass-base"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Toast message shown after clink -->
+    <div class="toast-message" id="toastMessage">
+        <div class="toast-quote">
+            "Here's to you, Sahithi — to your laughter, your strength,<br>
+            and every beautiful adventure waiting ahead. 🌸"
+        </div>
+        <div class="toast-cheers">🥂 Cheers to 25! 🥂</div>
+    </div>
+
+    <button class="clink-btn" onclick="clinkGlasses()">
+        🥂 Cheers! 🥂
+    </button>
+</section>
+
+<!-- 🎆 Grand Birthday Celebration Finale -->
+<section class="finale-section" id="finale">
+
+    <div class="finale-stars">
+        <span>⭐</span><span>✨</span><span>🌟</span><span>💫</span>
+        <span>⭐</span><span>✨</span><span>🌟</span><span>💫</span>
+    </div>
+
+    <div class="finale-inner">
+        <div class="finale-crown">👑</div>
+        <h2 class="finale-title">Grand Birthday Celebration</h2>
+        <p class="finale-subtitle">Ready for the big finale, Sahithi? 🎆</p>
+
+        <div class="finale-emoji-row">
+            <span>🎉</span><span>🎊</span><span>🎈</span>
+            <span>🎂</span>
+            <span>🎈</span><span>🎊</span><span>🎉</span>
+        </div>
+
+        <button class="finale-btn" onclick="startBirthdayFinale()">
+            Chudalani Vundha
+        </button>
+
+    </div>
+
+</section>
+
+    <!-- Birthday Message Section -->
+    <section class="message-section" id="message">
+        <div class="container">
+            <div class="message-card">
+            <h2 class="message-title">💖A Special Message💖</h2>
+            <p class="message-text">
+                Dear Sahithi, today is all about celebrating you and the beautiful person you are. Your smile, kindness, and energy make every moment brighter for everyone around you.
+            </p>
+            <p class="message-text">
+                May this new year of your life bring exciting adventures, unforgettable memories, and endless happiness. Keep shining and keep chasing your dreams.
+            </p>
+            <p class="message-highlight">
+                Happy 25th Birthday! May this year be your best one yet. 🎉
+           </p>
+            <div class="message-signature">
+                With Love
+            </div>
+
+            <div class="corner-names">
+                — Kalyan Kanchi
+            </div>
+
+            <div class="message-hearts">
+                <span class="heart-animation">❤️</span>
+                <span class="heart-animation">💕</span>
+                <span class="heart-animation">❤️</span>
+            </div>
+            </div>
+        </div>
+    </section>
+
+<!-- 🎁 3D Surprise Box -->
+<section class="surprise-section">
+
+<h2 class="section-title">A Special Surprise For You 🎁</h2>
+
+<div class="gift-container" onclick="openGiftBox()">
+
+<div class="gift-box" id="giftBox">
+
+<div class="gift-lid"></div>
+<div class="gift-body"></div>
+
+</div>
+
+</div>
+
+<div id="surpriseVideoWrapper" class="surprise-video-wrapper">
+
+<div class="video-container">
+
+<span class="close-surprise-video" onclick="closeSurpriseVideo()">✖</span>
+
+<video id="surpriseVideo" controls playsinline>
+<source src="Video (1).mp4" type="video/mp4">
+</video>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
