@@ -54,8 +54,21 @@ sectionsToPause.forEach(section=>{
 if(section) sectionObserver.observe(section);
 });
 
-// Always keep floating memories active by default
-startFloatingMemories();
+// Tap to reveal gallery captions on touch devices
+document.querySelectorAll('.photo-container').forEach(function(container) {
+    container.addEventListener('click', function() {
+        var isActive = container.classList.contains('tapped');
+        // Close all others
+        document.querySelectorAll('.photo-container.tapped').forEach(function(c) {
+            c.classList.remove('tapped');
+        });
+        if (!isActive) {
+            container.classList.add('tapped');
+        }
+    });
+});
+
+
 
 const canvas = document.getElementById("fireworks");
 
