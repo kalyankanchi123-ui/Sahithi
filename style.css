@@ -322,12 +322,18 @@ z-index:0;
     opacity: 1;
 }
 
-/* Always show overlay on touch devices */
+/* Touch devices: overlay hidden by default, shown on tap */
 @media (hover: none) {
     .photo-overlay {
-        opacity: 1;
+        opacity: 0;
     }
     .photo-caption {
+        transform: translateY(20px);
+    }
+    .photo-container.tapped .photo-overlay {
+        opacity: 1;
+    }
+    .photo-container.tapped .photo-caption {
         transform: translateY(0);
     }
 }
@@ -1000,12 +1006,10 @@ z-index:0;
 
 /* 🎮 Level Section */
 .level-section {
-    min-height: 100vh;
-    padding: 60px 20px;
+    padding: 100px 20px;
     background: #020617;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .level-box {
@@ -1283,8 +1287,12 @@ background: radial-gradient(circle at center,
     }
 
     .typewriter {
-        font-size: 2rem;
+        font-size: clamp(1.3rem, 5.5vw, 2rem);
         min-height: 60px;
+        line-height: 1.3;
+        word-break: break-word;
+        white-space: normal;
+        text-align: center;
     }
 }
 
@@ -1730,6 +1738,9 @@ height:auto;
     .slideshow-section{ padding: 60px 0; }
     .ultimate-cake-section { padding: 80px 20px; }
     .finale-section   { padding: 80px 20px; }
+    .finale-inner     { padding: 30px 20px; margin: 0 10px; }
+    .finale-title     { font-size: clamp(1.4rem, 5vw, 1.8rem); }
+    .finale-emoji-row { gap: 8px; font-size: 1.3rem; flex-wrap: wrap; }
     .surprise-section { padding: 80px 20px; }
     .video-button-section { padding: 50px 20px; }
     .message-section  { padding: 80px 0; }
@@ -1739,7 +1750,8 @@ height:auto;
     .finale-btn,
     .celebrate-btn { font-size: 1rem; padding: 12px 24px; }
 
-    .message-card { border-radius: 20px; }
+    .message-card { border-radius: 20px; overflow: visible; }
+    .message-title { font-size: clamp(1.8rem, 7vw, 2.5rem); line-height: 1.3; word-break: break-word; }
     .message-highlight { font-size: 1rem; }
     .message-signature { font-size: 1.3rem; }
 
